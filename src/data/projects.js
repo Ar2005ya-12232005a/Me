@@ -20,7 +20,7 @@ export const PROJECTS = [
   {
     slug: 'documind',
     image: '/Documind.png',
-    title: 'DocuMind — RAG Document Q&A',
+    title: 'DocuMind',
     link: 'https://github.com/Ar2005ya-12232005a/RAG_Q-A',
     summary:
       "A full-stack Retrieval-Augmented Generation (RAG) application that allows users to upload documents and interact with them through context-aware AI conversations. DocuMind supports PDF, DOCX, and TXT files and combines semantic vector retrieval with Google's Gemini 2.5 Flash model to generate answers grounded in the user's documents. The application processes uploaded files by extracting their content, splitting them into meaningful chunks, generating embeddings using SentenceTransformers, and storing those embeddings in a persistent ChromaDB vector database. When a user asks a question, relevant document chunks are retrieved and provided as context to the Gemini model before generating the final response. A key feature is source attribution: responses include relevant excerpts, filenames, and page references, allowing users to verify where the information came from. The system also supports a knowledge fallback mechanism for questions that require information beyond the uploaded documents.",
@@ -56,7 +56,7 @@ export const PROJECTS = [
   {
     slug: 'mindsense',
     image: '/Mindsense.png',
-    title: 'MindSense — AI Mental Health Sentiment Detector',
+    title: 'MindSense',
     link: 'https://github.com/Ar2005ya-12232005a/Mental_Health_Detector',
     summary:
       'An AI-powered mental health sentiment analysis platform that uses a fine-tuned RoBERTa transformer model to identify emotional signals in text. The system classifies user input into five categories — Distress, Anger, Positive, Cognitive, and Neutral — and presents prediction confidence and historical mood trends through an interactive dashboard. The model was fine-tuned using the Google Go Emotions dataset, with the original emotion labels regrouped into five application-specific categories. Class-weighted CrossEntropyLoss was used to address dataset imbalance, while the training objective prioritizes recall for the distress class to reduce the likelihood of missing potentially important distress signals. The ML model is exposed through a FastAPI inference service and integrated with a React frontend. The dashboard provides confidence visualizations, mood trend charts, prediction history, personalized wellness suggestions, and automatic escalation to crisis-support resources when high-confidence distress signals are detected. The application also implements responsible-AI safeguards, including confidence thresholding, persistent disclaimers, limitations documentation, and explicit separation between emotional-signal detection and clinical diagnosis.',
@@ -77,7 +77,7 @@ export const PROJECTS = [
   {
     slug: 'toxiscan',
     image: '/ToxiScan.png',
-    title: 'ToxiScan — AI Chemical Toxicity Analysis',
+    title: 'ToxiScan',
     link: 'https://github.com/Ar2005ya-12232005a/Drug_Toxicity',
     summary:
       'An AI-powered chemical toxicity screening platform designed to simulate early-stage computational toxicity analysis for drug discovery and chemical research. ToxiScan accepts a chemical compound represented as a SMILES string and evaluates its potential toxicity across 12 biological pathways. The application converts molecular structures into 2048-bit Morgan fingerprints using RDKit and processes these molecular features through 12 independently trained Random Forest models. Each model predicts the probability of toxicity for a specific biological endpoint, including receptor activity, oxidative stress, DNA damage, mitochondrial effects, and tumor-suppression pathways. The individual predictions are aggregated into a unified 0–100 toxicity score and categorized into different risk levels. The application also provides environmental impact insights and integrates Google\'s Gemini API to generate natural-language explanations of the prediction results. A React/Vite frontend communicates with a Flask backend through dedicated prediction and AI-explanation APIs, creating a complete end-to-end ML application.',
