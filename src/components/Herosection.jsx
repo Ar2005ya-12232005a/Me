@@ -272,31 +272,31 @@ const Herosection = () => {
       >
         {/* Pill — left column, pinned to its own start */}
         <div
-          ref={pillRef}
-          className="hero-pill-label"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 8,
-            justifySelf: 'start',
-            background: 'rgba(255,255,255,0.7)',
-            border: '1px solid rgba(10,10,10,0.12)',
-            borderRadius: 999,
-            padding: '8px 16px',
-            color: '#0a0a0a',
-          }}
-        >
-          <span
-            style={{
-              width: 8,
-              height: 8,
-              borderRadius: '50%',
-              background: '#22c55e',
-              display: 'inline-block',
-            }}
-          />
-          Available for new opportunities
-        </div>
+  ref={pillRef}
+  className="hero-pill-label"
+  style={{
+    display: 'flex',
+    alignItems: 'center',
+    gap: 8,
+    justifySelf: 'start',
+    background: '#0a0a0a',
+    border: '1px solid #ffffff',
+    borderRadius: 999,
+    padding: '8px 16px',
+    color: '#ffffff',
+  }}
+>
+  <span
+    style={{
+      width: 8,
+      height: 8,
+      borderRadius: '50%',
+      background: '#22c55e',
+      display: 'inline-block',
+    }}
+  />
+  Available for new opportunities
+</div>
 
         {/* Center — the 3D card stack fills this gap and scales itself
             off the space's own width/height (set via CSS above) */}
@@ -318,7 +318,7 @@ const Herosection = () => {
             margin: 0,
           }}
         >
-          "Design is the quiet art of making the complex feel obvious- "I build
+          "Design is the quiet art of making the complex feel obvious, "I build
           interfaces that get out of the user's way!"
         </p>
       </div>
@@ -366,9 +366,8 @@ const Herosection = () => {
               justifyContent: 'center',
             }}
           >
-            →
           </span>
-          Get in Touch
+        Get in Touch
         </button>
       </div>
     </section>
