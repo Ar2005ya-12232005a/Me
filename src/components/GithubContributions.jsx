@@ -40,8 +40,6 @@ const GithubContributions = () => {
       style={{
         position: 'relative',
         width: '100%',
-        // Considerably more vertical room now — this was reading as
-        // squeezed between the sections above/below it.
         minHeight: 'clamp(520px, 78vh, 780px)',
         padding: 'clamp(4.5rem, 12vh, 8rem) clamp(1.5rem, 6vw, 5rem)',
         background: '#ffffff',
@@ -63,6 +61,12 @@ const GithubContributions = () => {
           border: 1px solid rgba(26,79,255,0.12);
           box-shadow: 0 20px 44px -22px rgba(26,79,255,0.22);
           box-sizing: border-box;
+          overflow: hidden;
+        }
+        .github-contributions-img-wrap {
+          width: 100%;
+          overflow: hidden;
+          border-radius: 12px;
         }
         .github-contributions-img {
           display: block;
@@ -70,12 +74,33 @@ const GithubContributions = () => {
           height: auto;
           border-radius: 12px;
         }
+
+        /* Mobile only: shrink the whole section and zoom into the graph
+           so it doesn't look like it's floating in empty space */
         @media (max-width: 760px) {
+          .github-contributions-section {
+            min-height: auto !important;
+            padding: 2.75rem 1.1rem !important;
+          }
           .github-contributions-title {
-            font-size: 1.5rem !important;
+            font-size: 1.4rem !important;
+            margin-bottom: 1.5rem !important;
           }
           .github-contributions-card {
-            border-radius: 16px;
+            border-radius: 14px;
+            padding: 1rem 0.85rem !important;
+          }
+          .github-contributions-img {
+            /* zoom in on the graph, cropping the excess whitespace
+               that the SVG bakes in around the chart */
+            transform: scale(1.35);
+            transform-origin: center center;
+          }
+        }
+
+        @media (max-width: 420px) {
+          .github-contributions-img {
+            transform: scale(1.5);
           }
         }
       `}</style>
@@ -85,7 +110,6 @@ const GithubContributions = () => {
         className="github-contributions-title"
         style={{
           margin: '0 0 2.75rem',
-          // Nudged up slightly (was 1.6–2.2rem) to match the larger card below.
           fontSize: 'clamp(1.7rem, 3.4vw, 2.4rem)',
           fontWeight: 600,
           color: '#0a0a0a',
@@ -95,16 +119,18 @@ const GithubContributions = () => {
       </h2>
 
       <div ref={cardRef} className="github-contributions-card">
-        <img
-          className="github-contributions-img"
-          src={`https://github-readme-activity-graph.vercel.app/graph?username=${GITHUB_USERNAME}&bg_color=ffffff&color=${ACCENT.slice(
-            1
-          )}&line=${ACCENT.slice(1)}&point=${ACCENT.slice(1)}&area=true&area_color=${ACCENT.slice(
-            1
-          )}&hide_border=true&hide_title=true&custom_title=%20`}
-          alt="GitHub contribution graph"
-          loading="lazy"
-        />
+        <div className="github-contributions-img-wrap">
+          <img
+            className="github-contributions-img"
+            src={`https://github-readme-activity-graph.vercel.app/graph?username=${GITHUB_USERNAME}&bg_color=ffffff&color=${ACCENT.slice(
+              1
+            )}&line=${ACCENT.slice(1)}&point=${ACCENT.slice(1)}&area=true&area_color=${ACCENT.slice(
+              1
+            )}&hide_border=true&hide_title=true&custom_title=%20`}
+            alt="GitHub contribution graph"
+            loading="lazy"
+          />
+        </div>
       </div>
     </section>
   )
