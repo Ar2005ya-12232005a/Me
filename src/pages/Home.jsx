@@ -8,6 +8,7 @@ import ExperienceCarousel from '../components/ExperienceCarousel'
 import Posters from '../components/Posters'
 import ContactSection from '../components/ContactSection'
 import Certificates from '../components/Certificates'
+import GithubContributions from '../components/GithubContributions'
 
 
 const tools = [
@@ -64,7 +65,7 @@ const Home = () => {
 
       <AboutMeSection />
       <FocusStatement />
-    
+     <GithubContributions/>
       <SelectedWorks />
       <ExperienceCarousel />
       <Posters />
