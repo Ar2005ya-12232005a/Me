@@ -247,7 +247,7 @@ const Herosection = () => {
             lineHeight: 1.1,
           }}
         >
-         A...Web Developer
+        Designing better
         </div>
       </div>
 
