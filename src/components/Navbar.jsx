@@ -129,6 +129,8 @@ const Navbar = () => {
 
         .hero-brand {
           font-size: clamp(1.05rem, 1.9vw, 1.35rem);
+           font-family: "Edu NSW ACT Cursive", cursive;
+           font-weight: 500;
           color: #0a0a0a;
           line-height: 1;
           text-decoration: none;
@@ -171,9 +173,9 @@ const Navbar = () => {
         }
       `}</style>
 
-      <NavLink ref={navBrandRef} to="/" className="hero-brand hero-subheading">
-        Arya Sankar
-      </NavLink>
+    <NavLink ref={navBrandRef} to="/" className="hero-brand">
+  Arya Sankar
+</NavLink>
 
       <div ref={navLinksRef} className="hero-nav-links">
         {NAV_LINKS.map(({ label, path }) => (

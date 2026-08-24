@@ -9,6 +9,7 @@ import Posters from '../components/Posters'
 import ContactSection from '../components/ContactSection'
 import Certificates from '../components/Certificates'
 
+
 const tools = [
   { name: 'React',      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
   { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
@@ -63,6 +64,7 @@ const Home = () => {
 
       <AboutMeSection />
       <FocusStatement />
+    
       <SelectedWorks />
       <ExperienceCarousel />
       <Posters />
