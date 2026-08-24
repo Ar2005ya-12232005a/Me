@@ -330,7 +330,13 @@ const AboutMeSection = () => {
             <div className="about-flex-row">
               <div ref={textColRef} className="about-text-col">
                 <p className="about-body">
-                  I am a Computer Science Engineering student at VIT Bhopal University with a strong passion for web design and development. I enjoy creating modern, responsive, and user-friendly websites with a focus on clean layouts, attractive interfaces, and smooth user experiences. I have been learning and working with technologies such as HTML, CSS, JavaScript, React, Next.js, and Tailwind CSS, and I enjoy turning creative ideas into functional web applications. Along with frontend development, I am also exploring backend technologies and databases to understand how complete web applications are built. I am particularly interested in UI/UX, responsive design, animations, and creating visually appealing websites that are both engaging and easy to use. My goal is to continuously improve my web development skills, work on real-world projects, and grow into a professional full-stack web developer.
+                 I’m a Full-Stack Developer and Web Designer passionate about building meaningful digital experiences.
+I turn ideas into modern, responsive, and intuitive web applications.
+My work combines clean design, thoughtful interactions, and efficient development.
+I enjoy creating interfaces that are not only visually engaging but also easy to use.
+Beyond web development, I’m exploring Artificial Intelligence and Machine Learning.
+I’m constantly experimenting with new technologies, ideas, and ways to build better products.
+My goal is simple — create, learn, innovate, and build technology that makes an impact.
               </p>
               </div>
 
