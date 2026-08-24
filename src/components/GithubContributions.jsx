@@ -61,11 +61,9 @@ const GithubContributions = () => {
           border: 1px solid rgba(26,79,255,0.12);
           box-shadow: 0 20px 44px -22px rgba(26,79,255,0.22);
           box-sizing: border-box;
-          overflow: hidden;
         }
         .github-contributions-img-wrap {
           width: 100%;
-          overflow: hidden;
           border-radius: 12px;
         }
         .github-contributions-img {
@@ -75,8 +73,9 @@ const GithubContributions = () => {
           border-radius: 12px;
         }
 
-        /* Mobile only: shrink the whole section and zoom into the graph
-           so it doesn't look like it's floating in empty space */
+        /* Mobile only: shrink the section, then zoom into the graph by
+           making the image itself wider than its wrapper and letting the
+           wrapper scroll horizontally, so nothing is permanently cropped */
         @media (max-width: 760px) {
           .github-contributions-section {
             min-height: auto !important;
@@ -90,17 +89,25 @@ const GithubContributions = () => {
             border-radius: 14px;
             padding: 1rem 0.85rem !important;
           }
+          .github-contributions-img-wrap {
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+          }
           .github-contributions-img {
-            /* zoom in on the graph, cropping the excess whitespace
-               that the SVG bakes in around the chart */
-            transform: scale(1.35);
-            transform-origin: center center;
+            /* actually render wider than the wrapper (real zoom, not a
+               visual transform) so the extra width is reachable by
+               scrolling left/right instead of being clipped */
+            width: 160%;
+            max-width: 160%;
           }
         }
 
         @media (max-width: 420px) {
           .github-contributions-img {
-            transform: scale(1.5);
+            width: 190%;
+            max-width: 190%;
           }
         }
       `}</style>
