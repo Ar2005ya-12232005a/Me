@@ -214,10 +214,39 @@ const FocusStatement = () => {
   line-height: 1.45;
 }
 
+        /* Subtle shine on the letters only (no box). Each word's text is
+           clipped to two background layers: a faint light-blue sheen on
+           top, and the solid word color underneath (--word-color, which
+           the hover state changes). A small per-word delay (--i) makes
+           the sheen travel across the sentence left to right. */
         .focus-word {
           display: inline-block;
-          transition: color 0.25s ease;
           cursor: default;
+          background-image:
+            linear-gradient(
+              105deg,
+              transparent 0%,
+              transparent 40%,
+              rgba(192, 196, 204, 0.85) 50%,
+              transparent 60%,
+              transparent 100%
+            ),
+            linear-gradient(var(--word-color), var(--word-color));
+          background-size: 250% 100%, 100% 100%;
+          background-repeat: no-repeat;
+          background-position: 100% 0, 0 0;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          color: transparent;
+          animation: focusShine 6s ease-in-out infinite;
+          animation-delay: calc(var(--i) * 0.06s);
+        }
+
+        @keyframes focusShine {
+          0%   { background-position: 100% 0, 0 0; }
+          40%  { background-position: 0% 0, 0 0; }
+          100% { background-position: 0% 0, 0 0; }
         }
 
         @media (max-width: 900px) {
@@ -262,7 +291,10 @@ const FocusStatement = () => {
               className="focus-word"
               onMouseEnter={() => setHoverIndex(i)}
               onMouseLeave={() => setHoverIndex(prev => (prev === i ? null : prev))}
-              style={{ color: hoverIndex === i ? 'rgba(10, 10, 10, 0.35)' : '#0a0a0a' }}
+              style={{
+                '--word-color': hoverIndex === i ? 'rgba(10, 10, 10, 0.35)' : '#0a0a0a',
+                '--i': i,
+              }}
             >
               {word}{' '}
             </span>
