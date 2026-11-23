@@ -79,6 +79,34 @@ const Herosection = () => {
       }}  
     >  
       <style>{`  
+        /* Glossy blue gradient on "Better" — same blues as the hero blobs,
+           with a light sheen that sweeps across the letters. */
+        .hero-shiny-text {
+          display: inline-block;
+          background: linear-gradient(
+            110deg,
+            #1a4fff 0%,
+            #3d6fff 30%,
+            #8fb0ff 42%,
+            #dce6ff 50%,
+            #8fb0ff 58%,
+            #3d6fff 70%,
+            #1a4fff 100%
+          );
+          background-size: 250% 100%;
+          background-position: 100% 0;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          color: transparent;
+          animation: heroShine 3.5s linear infinite;
+        }
+
+        @keyframes heroShine {
+          0%   { background-position: 100% 0; }
+          100% { background-position: 0% 0; }
+        }
+
         .hero-middle-row {  
           flex-wrap: wrap;  
         }  
@@ -270,7 +298,7 @@ const Herosection = () => {
             gap: 'clamp(4px, 0.7vw, 10px)', 
           }}  
         >  
-          <span>Design better</span>  
+          <span>Design <span className="hero-shiny-text">Better</span></span>  
           <img  
             src="/butterfly.svg"  
             alt=""  

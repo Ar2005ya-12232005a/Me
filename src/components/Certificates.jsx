@@ -61,6 +61,15 @@ const CERTIFICATES = [
     image: "/AIML.png",
     color: ACCENT,
   },
+
+  {
+    id: "cert_6",
+    title: "Internet of Things",
+    issuer: "NPTEL",
+    date: "JAN 2026",
+    image: "/IOT.png",
+    color: ACCENT,
+  },
 ];
 
 function FadeSlide({ children, delay = 0, direction = "up" }) {
